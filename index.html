@@ -14,15 +14,15 @@
 
     <nav id="sidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
-        <a href="/home">Home</a>
-        <a href="/discord">Discord</a>
-        <a href="/ip">Server IP</a>
-        <a href="/vote">Vote</a>
-        <a href="/info">Info</a>
+        <a href="/home" onclick="navigate(event, '/home')">Home</a>
+        <a href="/discord" onclick="navigate(event, '/discord')">Discord</a>
+        <a href="/ip" onclick="navigate(event, '/ip')">Server IP</a>
+        <a href="/vote" onclick="navigate(event, '/vote')">Vote</a>
+        <a href="/info" onclick="navigate(event, '/info')">Info</a>
     </nav>
 
     <div id="main-content">
-        <!-- Content will be dynamically loaded based on the route -->
+        <!-- Content will be dynamically loaded here -->
     </div>
 
     <footer>
