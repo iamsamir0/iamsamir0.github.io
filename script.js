@@ -1,4 +1,11 @@
-function vote() {
-    alert("Thank you for voting! You will be redirected to the voting page.");
-    window.location.href = "https://votingsite.com";
+function toggleMenu() {
+    const sidebar = document.getElementById("sidebar");
+    const mainContent = document.getElementById("main-content");
+    if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        mainContent.style.marginLeft = "0";
+    } else {
+        sidebar.style.width = "250px";
+        mainContent.style.marginLeft = "250px";
+    }
 }
