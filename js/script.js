@@ -20,7 +20,19 @@ function showPage(pageId) {
 }
 
 function initializePage() {
-    var urlParams = new URLSearchParams(window.location.search);
-    var page = urlParams.get('page') || 'home';
-    showPage(page);
+    var path = window.location.pathname;
+    var pageId = path.substring(1); // Remove leading "/"
+    if (!pageId || pageId === '') {
+        pageId = 'home'; // Default page
+    }
+    showPage(pageId);
 }
+
+function navigateToPage(pageId) {
+    window.history.pushState(null, '', '/' + pageId);
+    showPage(pageId);
+}
+
+window.onpopstate = function () {
+    initializePage();
+};
