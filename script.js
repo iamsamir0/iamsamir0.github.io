@@ -8,9 +8,8 @@ function toggleMenu() {
 }
 
 // Function to load the content based on the URL path
-function loadContent() {
+function loadContent(path) {
     const mainContent = document.getElementById("main-content");
-    const path = window.location.pathname;
 
     switch (path) {
         case '/home':
@@ -61,6 +60,15 @@ function loadContent() {
     }
 }
 
-// Load content based on the current URL path
-window.onload = loadContent;
-window.onpopstate = loadContent;
+// Function to handle navigation and update the URL without reloading
+function navigate(event, path) {
+    event.preventDefault();
+    window.history.pushState({}, "", path);
+    loadContent(path);
+}
+
+// Initial load of content based on the current path
+window.onload = () => loadContent(window.location.pathname);
+
+// Handle the back/forward browser buttons
+window.onpopstate = () => loadContent(window.location.pathname);
