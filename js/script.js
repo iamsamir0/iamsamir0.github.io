@@ -33,6 +33,10 @@ function navigateToPage(pageId) {
     showPage(pageId);
 }
 
+// Handle browser navigation
 window.onpopstate = function () {
     initializePage();
 };
+
+// Initialize page on load
+initializePage();
