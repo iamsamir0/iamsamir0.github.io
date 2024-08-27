@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Minecraft Server</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Home - Your Minecraft Server</title>
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header>
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
-        <h1 id="page-title">Home</h1>
+        <h1>Home</h1>
     </header>
 
     <nav id="sidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
-        <a href="#" onclick="loadPage('home')">Home</a>
-        <a href="#" onclick="loadPage('discord')">Discord</a>
-        <a href="#" onclick="loadPage('ip')">Server IP</a>
-        <a href="#" onclick="loadPage('vote')">Vote</a>
-        <a href="#" onclick="loadPage('info')">Info</a>
+        <a href="index.html">Home</a>
+        <a href="discord.html">Discord</a>
+        <a href="ip.html">Server IP</a>
+        <a href="vote.html">Vote</a>
+        <a href="info.html">Info</a>
     </nav>
 
     <div id="main-content">
-        <!-- Content will be dynamically loaded here -->
+        <section>
+            <h2>Home</h2>
+            <p>Welcome to the best Minecraft server! Join us for epic adventures and amazing builds!</p>
+        </section>
     </div>
 
     <footer>
         <p>&copy; 2024 Your Minecraft Server. All rights reserved.</p>
     </footer>
 
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>
