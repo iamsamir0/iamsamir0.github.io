@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Uptime - LightLand</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <h1>Server Uptime</h1>
+    </header>
+
+    <nav id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+        <a href="home">Home</a>
+        <a href="discord">Discord</a>
+        <a href="ip">Server IP</a>
+        <a href="vote">Vote</a>
+        <a href="info">Info</a>
+    </nav>
+
+    <div id="main-content">
+        <section>
+            <h2>Server Status</h2>
+            <p>Status: <span id="status">Checking...</span></p>
+            <p>IP: <strong>play.yourserver.com</strong></p>
+            <p>Port: <strong>25565</strong></p>
+            <p>Online Players: <span id="players">Loading...</span></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 LightLand. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/uptime.js"></script>
+</body>
+</html>
