@@ -7,16 +7,17 @@ body {
 }
 
 header {
-    background-color: #333;
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
     padding: 20px;
     text-align: center;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     margin: 0;
-    font-size: 24px;
-    color: #ffcc00;
+    font-size: 28px;
+    color: #fff;
 }
 
 .menu-icon {
@@ -25,7 +26,7 @@ header h1 {
     position: absolute;
     left: 20px;
     top: 20px;
-    color: #ffcc00;
+    color: #fff;
 }
 
 .sidebar {
@@ -64,26 +65,59 @@ header h1 {
 
 #main-content {
     padding: 20px;
-    margin-left: 0; /* Prevents content from moving */
+    margin-left: 0;
     transition: margin-left 0.5s;
 }
 
-.center-button {
+.content-section {
+    background: #2c2c2c;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    font-size: 26px;
+    color: #ffcc00;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.game-modes {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-mode {
+    background: #1b1b1b;
+    border: 1px solid #ffcc00;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.game-title {
+    font-size: 22px;
+    color: #ffcc00;
+    margin: 0;
+}
+
+.game-description {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.footer-text {
+    font-size: 18px;
     text-align: center;
     margin-top: 20px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #ffcc00;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #e6b800;
 }
 
 footer {
