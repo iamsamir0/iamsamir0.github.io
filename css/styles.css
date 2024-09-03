@@ -1,9 +1,8 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #1b1b1b, #333333);
-    color: #f0f0f0;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
 }
 
 header {
