@@ -187,4 +187,28 @@ footer {
     background: #ff9900;
     color: #fff;
 }
+    
+.centered-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.button {
+    background: linear-gradient(135deg, #ffcc00, #ff9900);
+    color: #1b1b1b;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #ff9900, #ffcc00);
+    color: #fff;
+}
+    
 
