@@ -70,10 +70,8 @@ header h1 {
 
 #main-content {
     padding: 20px;
-    min-height: calc(100vh - 200px);
     margin-left: 0;
     transition: margin-left 0.5s;
-
 }
 
 .content-section {
