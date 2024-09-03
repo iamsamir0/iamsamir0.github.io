@@ -1,5 +1,5 @@
-html, body {
-    height: 100%;
+body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #1b1b1b, #333333);
@@ -79,6 +79,7 @@ header h1 {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
 }
 
 .section-title {
@@ -136,10 +137,11 @@ footer {
     color: #f0f0f0;
     text-align: center;
     padding: 15px;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 .additional-links {
