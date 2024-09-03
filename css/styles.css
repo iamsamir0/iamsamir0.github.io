@@ -136,7 +136,7 @@ footer {
     color: #f0f0f0;
     text-align: center;
     padding: 15px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
