@@ -24,9 +24,9 @@
     <div id="main-content">
         <section class="content-section">
             <h2 class="section-title">Server IP</h2>
-            <p class="description-text">Click the IP address below to copy it to your clipboard.</p>
+            <p class="description-text">Click the button below to copy the server IP address to your clipboard.</p>
             <div class="centered-buttons">
-                <button class="copy-button" onclick="copyToClipboard()">IP: 123.45.67.89:25565</button>
+                <button class="copy-button" onclick="copyToClipboard()">Copy IP: 123.45.67.89:25565</button>
             </div>
         </section>
     </div>
@@ -36,5 +36,15 @@
     </footer>
 
     <script src="../js/script.js"></script>
+    <script>
+        function copyToClipboard() {
+            const ipAddress = "123.45.67.89:25565";
+            navigator.clipboard.writeText(ipAddress).then(function() {
+                alert("IP Address Copied: " + ipAddress);
+            }, function() {
+                alert("Failed to copy the IP address. Please try again.");
+            });
+        }
+    </script>
 </body>
 </html>
