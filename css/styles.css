@@ -69,8 +69,10 @@ header h1 {
 
 #main-content {
     padding: 20px;
+    min-height: calc(100vh - 200px);
     margin-left: 0;
     transition: margin-left 0.5s;
+
 }
 
 .content-section {
@@ -135,10 +137,9 @@ footer {
     color: #f0f0f0;
     text-align: center;
     padding: 15px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
 }
 
 .additional-links {
