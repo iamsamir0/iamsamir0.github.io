@@ -1,12 +1,10 @@
 const fileInput = document.getElementById('fileInput');
 const convertBtn = document.getElementById('convertBtn');
 const resolutionSelect = document.getElementById('resolution');
+const formatSelect = document.getElementById('format');
 const downloadSection = document.getElementById('downloadSection');
-const downloadBtn = document.getElementById('downloadBtn');
-const themeToggleBtn = document.getElementById('toggleTheme');
+const downloadLink = document.getElementById('downloadLink');
 let currentFile = null;
-
-themeToggleBtn.addEventListener('click', toggleTheme);
 
 // Handle file input
 fileInput.addEventListener('change', (e) => {
@@ -16,28 +14,27 @@ fileInput.addEventListener('change', (e) => {
     }
 });
 
-// Conversion simulation
+// Conversion simulation and download generation
 convertBtn.addEventListener('click', () => {
     if (currentFile) {
         const resolution = resolutionSelect.value;
-        console.log(`Converting file to ${resolution} resolution...`);
+        const format = formatSelect.value;
 
-        // Placeholder for actual conversion logic
+        console.log(`Converting file to ${resolution} resolution and ${format} format...`);
+
+        // Simulate conversion process (This needs to be done server-side)
         setTimeout(() => {
-            alert(`File converted to ${resolution} successfully!`);
+            alert(`File converted to ${resolution} and ${format} successfully!`);
+            
+            // Simulate a converted file (In real use case, this will be replaced by the backend processed file URL)
+            const blob = new Blob([currentFile], { type: `image/${format}` });
+            const url = URL.createObjectURL(blob);
+
+            downloadLink.href = url;
+            downloadLink.download = `converted.${format}`;
             downloadSection.classList.remove('hidden');
-        }, 1000);
+        }, 1500);
     } else {
         alert('Please select a file first.');
     }
 });
-
-// Download functionality (simulated)
-downloadBtn.addEventListener('click', () => {
-    alert('File downloaded successfully!');
-});
-
-// Toggle between dark and light themes
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-}
