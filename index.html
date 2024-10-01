@@ -2,7 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=https://iamsamir123.github.io/home">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image & Video Converter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body>
+    <div class="theme-toggle">
+        <label for="theme">Toggle Theme:</label>
+        <button id="toggleTheme">Switch Theme</button>
+    </div>
+
+    <div class="container">
+        <h1>Image & Video Converter</h1>
+
+        <div class="file-input">
+            <label for="fileInput">Select Image or Video:</label>
+            <input type="file" id="fileInput" accept="image/*, video/*">
+        </div>
+
+        <div class="enhancer-options">
+            <label for="resolution">Enhance to:</label>
+            <select id="resolution">
+                <option value="original">Original</option>
+                <option value="2k">2K</option>
+                <option value="4k">4K</option>
+                <option value="8k">8K</option>
+            </select>
+        </div>
+
+        <button id="convertBtn">Convert</button>
+
+        <div id="downloadSection" class="hidden">
+            <h2>Download Your File</h2>
+            <button id="downloadBtn">Download</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
