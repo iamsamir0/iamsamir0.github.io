@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="theme-toggle">
-        <label for="theme">Toggle Theme:</label>
-        <button id="toggleTheme">Switch Theme</button>
-    </div>
-
     <div class="container">
         <h1>Image & Video Converter</h1>
 
@@ -30,11 +25,21 @@
             </select>
         </div>
 
+        <div class="format-options">
+            <label for="format">Convert to format:</label>
+            <select id="format">
+                <option value="jpg">JPG</option>
+                <option value="png">PNG</option>
+                <option value="mp4">MP4</option>
+                <option value="webm">WEBM</option>
+            </select>
+        </div>
+
         <button id="convertBtn">Convert</button>
 
         <div id="downloadSection" class="hidden">
             <h2>Download Your File</h2>
-            <button id="downloadBtn">Download</button>
+            <a id="downloadLink" href="#" download>Download File</a>
         </div>
     </div>
 
