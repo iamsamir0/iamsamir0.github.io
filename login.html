@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="email" id="email" placeholder="Email" required />
+            <input type="password" id="password" placeholder="Password" required />
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Get user data from localStorage
+            const userData = JSON.parse(localStorage.getItem(email));
+
+            if (userData && userData.password === password) {
+                // Store a token or session flag to track the logged-in status
+                localStorage.setItem('loggedInUser', email);
+                alert('Login successful!');
+                window.location.href = 'dashboard.html';  // Redirect to dashboard
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+    </script>
+</body>
+</html>
