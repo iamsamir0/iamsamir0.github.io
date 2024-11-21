@@ -1,9 +1,0 @@
-RewriteEngine On
-
-# Redirect trailing slash for .html files to the same URL without slash
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^(.+)\.html/$ /$1.html [L,R=301]
-
-# Allow trailing slash to load the same page
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)/$ /$1.html [L]
