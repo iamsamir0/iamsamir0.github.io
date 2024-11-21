@@ -5,9 +5,32 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif; /* Light and modern font */
-  background-color: #121212; /* Dark background */
-  color: #f5f5f5; /* Light text */
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #121212, #1e1e1e);
+  color: #f5f5f5;
+  overflow-x: hidden; /* Prevent horizontal scroll caused by animations */
+}
+
+/* Background Animation */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.2), transparent);
+  z-index: -1;
+  animation: glow 5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.1), transparent);
+  }
+  100% {
+    background: radial-gradient(circle, rgba(255, 193, 7, 0.3), transparent);
+  }
 }
 
 /* Header Styling */
@@ -16,124 +39,174 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #1e1e1e; /* Slightly lighter than body */
-  border-bottom: 2px solid #ffc107; /* Yellow accent */
+  background-color: rgba(30, 30, 30, 0.8); /* Transparent background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-bottom: 2px solid #ffc107;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 header .logo {
   font-size: 28px;
-  font-family: 'Montserrat', sans-serif; /* Bold font for logo */
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: #ffc107; /* Yellow color for the logo */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Cool shadow effect */
+  color: #ffc107;
+  text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.6);
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 header nav a {
   color: #f5f5f5;
   text-decoration: none;
-  margin: 0 10px;
+  margin: 0 15px;
   font-size: 16px;
-  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  position: relative;
 }
 
 header nav a:hover {
-  color: #ffc107; /* Highlight on hover */
+  color: #ffc107;
+}
+
+header nav a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ffc107;
+  bottom: -5px;
+  left: 0;
+  animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* Main Content Styling */
 main {
-  padding: 20px;
+  padding: 50px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1, h2 {
-  font-family: 'Montserrat', sans-serif; /* Bold and modern font */
-  color: #ffc107; /* Yellow headers */
-  border-bottom: 2px solid #ffc107;
-  padding-bottom: 5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add shadow for a cool effect */
+  font-family: 'Montserrat', sans-serif;
+  color: #ffc107;
+  text-shadow: 2px 2px 10px rgba(255, 193, 7, 0.6);
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 p {
-  font-family: 'Poppins', sans-serif; /* Light and readable font */
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* Plugin List Styling */
+/* Plugin Cards Styling */
 .plugin-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-around;
+  gap: 30px;
+  justify-content: center;
 }
 
 .plugin {
   background-color: #1e1e1e;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  width: 250px;
-  text-align: center;
   border: 1px solid #ffc107;
+  border-radius: 15px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plugin:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(255, 193, 7, 0.4);
 }
 
 .plugin h3 {
-  font-family: 'Montserrat', sans-serif; /* Bold font for plugin titles */
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   color: #ffc107;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .plugin p {
-  font-family: 'Poppins', sans-serif; /* Light font for descriptions */
   font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Animated Button */
 .download-button {
   display: inline-block;
-  padding: 10px 15px;
-  margin-top: 10px;
-  background-color: #ffc107;
+  padding: 12px 20px;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #ffc107, #ffca2c);
   color: #121212;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .download-button:hover {
-  background-color: #ffca2c;
-  transform: scale(1.05); /* Slight zoom effect */
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #ffca2c, #ffc107);
 }
 
 /* Footer Styling */
 footer {
-  background-color: #1e1e1e;
+  background-color: rgba(30, 30, 30, 0.8);
   color: #f5f5f5;
   text-align: center;
-  padding: 10px 0;
+  padding: 20px;
+  margin-top: 30px;
   border-top: 2px solid #ffc107;
+  animation: fadeIn 2s ease-in-out;
 }
 
 footer .social-links a {
   color: #ffc107;
+  font-size: 18px;
   text-decoration: none;
-  margin: 0 10px;
-  font-family: 'Montserrat', sans-serif; /* Bold font for links */
-  font-size: 16px;
-  transition: color 0.3s ease;
+  margin: 0 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 footer .social-links a:hover {
   color: #ffca2c;
-}
-
-/* Extra Styling for a Cool Effect */
-h1 span, .logo span {
-  background: linear-gradient(90deg, #ffc107, #ffca2c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Gradient text effect */
-}
+  transform: scale(1.2);
+  }
+  
