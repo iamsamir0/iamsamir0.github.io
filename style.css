@@ -12,19 +12,6 @@ body {
 }
 
 /* Header Styling */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: rgba(30, 30, 30, 0.8); /* Transparent background */
-  backdrop-filter: blur(10px); /* Glass effect */
-  border-bottom: 2px solid #ffc107;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: all 0.3s ease;
-}
 
 header nav a {
   color: #f5f5f5;
