@@ -1,61 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download Plugins</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloads - Minecraft Plugins</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-  <header>
-    <div class="logo">Download</div>
-    <nav>
-      <a href="index">Home</a>
-      <a href="downloads">Downloads</a>
-      <a href="https://discord.gg/link">Discord</a>
-    </nav>
-  </header>
-  
-  <main>
-    <section id="downloads">
-      <h2>Available Plugins</h2>
-      <div class="plugin-list">
-        <!-- DailyRewards -->
-        <div class="plugin">
-          <h3>DailyRewards</h3>
-          <p>Reward your players with daily bonuses when they use /daily.</p>
-          <a href="downloads/DailyRewards_v1.0.phar" download class="download-button">Download</a>
-        </div>
-        
-        <!-- Rename v2 -->
-        <div class="plugin">
-          <h3>Rename v2</h3>
-          <p>Rename items with custom colors permission rename.use.</p>
-          <a href="downloads/Rename_v2.0.phar" download class="download-button">Download</a>
-        </div>
-        
-        <!-- AdvancedAutoAuth -->
-        <div class="plugin">
-          <h3>AdvancedAutoAuth</h3>
-          <p>Automatically authenticates players by their IP address for faster logins.</p>
-          <a href="downloads/AdvanceAutoAuth.phar" download class="download-button">Download</a>
-        </div>
-        
-        <!-- Discord Plugin -->
-        <div class="plugin">
-          <h3>Discord</h3>
-          <p>Adds a /discord command to your server for sharing your server's Discord link.</p>
-          <a href="downloads/Discord_v1.0.phar" download class="download-button">Download</a>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <p>&copy; 2024 LightLand Plugins. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://discord.gg/link">Discord</a>
-    </div>
-  </footer>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="downloads.html" class="active">Downloads</a></li>
+            <div class="nav-underline"></div>
+        </ul>
+    </nav>
+
+    <section class="downloads">
+        <h1>Available Plugins</h1>
+
+        <div class="plugin-card">
+            <h2>DailyRewards</h2>
+            <p>Reward your players with daily bonuses when they use /daily.</p>
+            <button>Download</button>
+        </div>
+
+        <div class="plugin-card">
+            <h2>Rename v2</h2>
+            <p>Rename items with custom colors. Permission: rename.use.</p>
+            <button>Download</button>
+        </div>
+
+        <div class="plugin-card">
+            <h2>AdvancedAutoAuth</h2>
+            <p>Automatically authenticates players by their IP address for faster logins.</p>
+            <button>Download</button>
+        </div>
+
+    </section>
+
 </body>
 </html>
